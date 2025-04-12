@@ -45,6 +45,7 @@ const cardConfigStruct = assign(
     entity: optional(string()),
     name: optional(string()),
     icon: optional(string()),
+    state_on_top: optional(boolean()),
     hide_state: optional(boolean()),
     state_content: optional(union([string(), array(string())])),
     color: optional(string()),
@@ -118,6 +119,12 @@ export class HuiTileCardEditor
                 },
                 {
                   name: "hide_state",
+                  selector: {
+                    boolean: {},
+                  },
+                },
+                {
+                  name: "state_on_top",
                   selector: {
                     boolean: {},
                   },
@@ -403,6 +410,7 @@ export class HuiTileCardEditor
       case "icon_double_tap_action":
       case "show_entity_picture":
       case "hide_state":
+      case "state_on_top":
       case "state_content":
       case "content_layout":
       case "features_position":
